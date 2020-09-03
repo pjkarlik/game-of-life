@@ -231,7 +231,8 @@ class Render {
   renderLoop = () => {
     this.frame++;
 
-    this.updateFrame();
+    if (this.frame % 2 === 0) this.updateFrame();
+
     this.drawFrame();
 
     this.animation = window.requestAnimationFrame(this.renderLoop);
